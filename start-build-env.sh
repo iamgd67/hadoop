@@ -46,5 +46,8 @@ docker run --rm=true -t -i \
   -v "${PWD}:/home/${USER_NAME}/hadoop" \
   -w "/home/${USER_NAME}/hadoop" \
   -v "${HOME}/.m2:/home/${USER_NAME}/.m2" \
+  -v "/tmp/.X11-unix:/tmp/.X11-unix" \
+  -e "DISPLAY=unix${DISPLAY}" \
+  -v "${HOME}/67/program:/home/${USER_NAME}/program" \
   -u "${USER_NAME}" \
   "hadoop-build-${USER_ID}"
